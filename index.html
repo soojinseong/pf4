@@ -67,29 +67,31 @@
             //basic의 p를 감추시오 hide();
             $("main #basic .wrap article ul.list li a p").hide();
 
-            //basic의 h3를 클릭하면 실행하시오.
+            //basic의 h3를 클릭하면 실행하시오
             $("main #basic .wrap article ul.list li a h3").click(function(){
                 $(this).next().slideToggle();
-                // $(this).parent().parent().siblings().children().children("p").slideUp();
+                //$(this).parent().parent().siblings().children().children("p").slideUp();
                 $(this).parents("li").siblings().find("p").slideUp();
                 // toggleClass()를 이용하여 클릭시 테두리 칼라로 보여지게
                 // 클릭한 요소의 li에 보더칼라지정
                 $(this).parents("li").toggleClass("border-color");
-                // 클릭한 요소의 li 가 아닌 다른형제요소들에 클래스 (border-color)를 없애시오.
-                $(this).parents("li").siblings().removeClass("border-color");
+                //클릭한요소의 li가 아닌 다른형제요소들에 클래스(border-color)를 없애시오.
+                $(this).parents("li").sibling().removeClass("border-color");
+
             });
 
-            // basic의 a클릭시 새로고침 방지 retur false
+            //basic의 a클릭시 새로고침 방지 return false
             $("main #basic .wrap article ul.list li a").click(function(){
                 return false;
             });
 
-            // basic의 첫번째  li를 보이게 해라 show();
+            //basic의첫번째 li를 보이게 해라show();
             $("main #basic .wrap article ul.list li:nth-child(1) p").show();
 
             // basic의 h3에 hover하면 실행하시오.(function 2개 배치)
             $("main #basic .wrap article ul.list li a h3").hover( //hover안에는 function(){}이 들어간다 2개까지를 넣을 수 있다
 				function(){ 
+                    //오버한 대상의 li에 border를 지정하시오(css()이용)
                     $(this).parents("li").css("border","1px solid #999");
                     
 				}
@@ -113,6 +115,7 @@
 				}
 				,
 				function(){
+                    // 오버한 대상의 li에 border값을 none하시오
                     $(this).parents("li").css("border-color","transparent");
 			});
             $("main #middle .wrap article ul.list li h3").hover(
@@ -125,22 +128,31 @@
 			});
         });
         </script>
+    
+    <!-- 타이틀 애니 -->
         <script type="text/javascript" src="https://daks2k3a4ib2z.cloudfront.net/5317d67d660658b254000454/js/webflow.js?2f83b8326cc4c8f7327b5dba30444a37"></script>
+    
         <!-- 슬릭 -->
-        <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-        <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
-
-        <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
         <script>				
-
         $(document).ready(function(){
             $('.slic').slick();
         });
         </script>
         
+    <!-- 페이지 슬라이딩.사이트도트 -->
     <link rel="stylesheet" href="css/timelinenav.css">
     <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
-    <!-- <script src="js/smoothscroll.js"></script> -->
+    <script src="js/smoothscroll.js"></script>
+
+    <!-- 포트폴리오 -->
+    <link rel="stylesheet" href="css/portfolio.css">
+    <script src="js/portfolio.js"></script>
+
+    <!-- skill 원형 -->
+    <link rel="stylesheet" href="css/circle.css">
 </head>
 <body data-spy="scroll" data-target="#navbar-example">
     <header>
@@ -276,6 +288,222 @@
                         </ul>
                     </div>
                 </article>
+            </div>
+        </section>
+        <section id="portfolio" class="gallery">
+            <div class="wrap row">
+                <ul>
+                    <a href="#" class="close"></a>
+                    <li>
+                        <a href="#item01">
+                            <img src="https://cdn.dribbble.com/users/545884/screenshots/3981307/lorena2.png" alt="">
+                        </a>
+                    </li>
+        
+                    <li>
+                        <a href="#item02">
+                            <img src="https://cdn.dribbble.com/users/545884/screenshots/3892302/contact.png" alt="">
+                        </a>
+                    </li>
+        
+                    <li>
+                        <a href="#item03">
+                            <img src="https://cdn.dribbble.com/users/545884/screenshots/4154721/dive--001.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a class="image" href="#item04">
+                            <img src="https://cdn.dribbble.com/users/545884/screenshots/4356121/darko--dr.jpg" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a class="image" href="#item05">
+                            <img src="https://cdn.dribbble.com/users/545884/screenshots/3695553/news.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a class="image" href="#item06">
+                            <img src="https://cdn.dribbble.com/users/545884/screenshots/4360101/liberosis_--_12.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a class="image" href="#item07">
+                            <img src="https://cdn.dribbble.com/users/545884/screenshots/3148799/technical-book.jpg" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a class="image" href="#item08">
+                            <img src="https://cdn.dribbble.com/users/545884/screenshots/2883479/cover.jpg" alt="">
+                        </a>
+                    </li>
+                </ul>
+            </div> <!-- / row -->
+        
+            <!-- Item 01 -->
+            <div id="item01" class="port">
+                <div class="row">
+                    <div class="description">
+                        <h1>Item 01</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis libero erat. Integer ac purus est. Proin erat mi, pulvinar ut magna eget, consectetur auctor turpis.</p>
+                    </div>
+                        <img src="https://cdn.dribbble.com/users/545884/screenshots/3981307/lorena2.png" alt="">
+                    </div>
+                </div> <!-- / row -->
+            </div> <!-- / Item 02 -->
+        
+            <!-- Item 02 -->
+            <div id="item02" class="port">
+                <div class="row">
+                    <div class="description">
+                        <h1>Item 02</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis libero erat. Integer ac purus est. Proin erat mi, pulvinar ut magna eget, consectetur auctor turpis.</p>
+                    </div>
+                    <img src="https://cdn.dribbble.com/users/545884/screenshots/3892302/contact.png" alt="">
+                </div> <!-- / row -->
+            </div> <!-- / Item 02 -->
+        
+            <!-- Item 03 -->
+            <div id="item03" class="port">
+                <div class="row">
+                    <div class="description">
+                        <h1>Item 03</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis libero erat. Integer ac purus est. Proin erat mi, pulvinar ut magna eget, consectetur auctor turpis.</p>
+                    </div>
+                    <img src="https://cdn.dribbble.com/users/545884/screenshots/4154721/dive--001.png" alt="">
+                </div> <!-- / row -->
+            </div> <!-- / Item 03 -->
+        
+        </section>
+        <section id="skill">
+            <div class="wrap">
+                <!--  Container  -->
+                <ul class="progress">
+                    <!--  Item  -->
+                    <li data-name="SVG Skill" data-percent="73%">
+                        <svg viewBox="-10 -10 220 220">
+                        <g fill="none" stroke-width="3" transform="translate(100,100)">
+                        <path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="url(#cl1)"/>
+                        <path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="url(#cl2)"/>
+                        <path d="M 86.6,50 A 100,100 0 0,1 0,100" stroke="url(#cl3)"/>
+                        <path d="M 0,100 A 100,100 0 0,1 -86.6,50" stroke="url(#cl4)"/>
+                        <path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" stroke="url(#cl5)"/>
+                        <path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="url(#cl6)"/>
+                        </g>
+                        </svg>
+                        <svg viewBox="-10 -10 220 220">
+                        <path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="81"></path>
+                        </svg>
+                    </li>
+                    <!--  Item  -->
+                    <li data-name="HTML5 Skill" data-percent="87%">
+                        <svg viewBox="-10 -10 220 220">
+                        <g fill="none" stroke-width="2" transform="translate(100,100)">
+                        <path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="url(#cl1)"/>
+                        <path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="url(#cl2)"/>
+                        <path d="M 86.6,50 A 100,100 0 0,1 0,100" stroke="url(#cl3)"/>
+                        <path d="M 0,100 A 100,100 0 0,1 -86.6,50" stroke="url(#cl4)"/>
+                        <path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" stroke="url(#cl5)"/>
+                        <path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="url(#cl6)"/>
+                        </g>
+                        </svg>
+                        <svg viewBox="-10 -10 220 220">
+                        <path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="547"></path>
+                        </svg>
+                    </li>
+                    <!--  Item  -->
+                    <li data-name="jQuery Skill" data-percent="73%">
+                        <svg viewBox="-10 -10 220 220">
+                        <g fill="none" stroke-width="12" transform="translate(100,100)">
+                        <path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="url(#cl1)"/>
+                        <path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="url(#cl2)"/>
+                        <path d="M 86.6,50 A 100,100 0 0,1 0,100" stroke="url(#cl3)"/>
+                        <path d="M 0,100 A 100,100 0 0,1 -86.6,50" stroke="url(#cl4)"/>
+                        <path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" stroke="url(#cl5)"/>
+                        <path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="url(#cl6)"/>
+                        </g>
+                        </svg>
+                        <svg viewBox="-10 -10 220 220">
+                        <path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="81"></path>
+                        </svg>
+                    </li>
+                    <!--  Item  -->
+                    <li data-name="UI Skill" data-percent="97%">
+                        <svg viewBox="-10 -10 220 220">
+                        <g fill="none" stroke-width="9" transform="translate(100,100)">
+                        <path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="url(#cl1)"/>
+                        <path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="url(#cl2)"/>
+                        <path d="M 86.6,50 A 100,100 0 0,1 0,100" stroke="url(#cl3)"/>
+                        <path d="M 0,100 A 100,100 0 0,1 -86.6,50" stroke="url(#cl4)"/>
+                        <path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" stroke="url(#cl5)"/>
+                        <path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="url(#cl6)"/>
+                        </g>
+                        </svg>
+                        <svg viewBox="-10 -10 220 220">
+                        <path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="610"></path>
+                        </svg>
+                    </li>
+                    <!--  Item  -->
+                    <li data-name="PHP Skill" data-percent="88%">
+                        <svg viewBox="-10 -10 220 220">
+                        <g fill="none" stroke-width="6" transform="translate(100,100)">
+                        <path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="url(#cl1)"/>
+                        <path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="url(#cl2)"/>
+                        <path d="M 86.6,50 A 100,100 0 0,1 0,100" stroke="url(#cl3)"/>
+                        <path d="M 0,100 A 100,100 0 0,1 -86.6,50" stroke="url(#cl4)"/>
+                        <path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" stroke="url(#cl5)"/>
+                        <path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="url(#cl6)"/>
+                        </g>
+                        </svg>
+                        <svg viewBox="-10 -10 220 220">
+                        <path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="364"></path>
+                        </svg>
+                    </li>
+                    <!--  Item  -->
+                    <li data-name="CSS Skill" data-percent="100%">
+                        <svg viewBox="-10 -10 220 220">
+                        <g fill="none" stroke-width="6" transform="translate(100,100)">
+                        <path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="url(#cl1)"/>
+                        <path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="url(#cl2)"/>
+                        <path d="M 86.6,50 A 100,100 0 0,1 0,100" stroke="url(#cl3)"/>
+                        <path d="M 0,100 A 100,100 0 0,1 -86.6,50" stroke="url(#cl4)"/>
+                        <path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" stroke="url(#cl5)"/>
+                        <path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="url(#cl6)"/>
+                        </g>
+                        </svg>
+                        <svg viewBox="-10 -10 220 220">
+                        <path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="629"></path>
+                        </svg>
+                    </li>
+                </ul>
+                <!--  Defining Angle Gradient Colors  -->
+                <svg width="0" height="0">
+                    <defs>
+                    <linearGradient id="cl1" gradientUnits="objectBoundingBox" x1="0" y1="0" x2="1" y2="1">
+                        <stop stop-color="#618099"/>
+                        <stop offset="100%" stop-color="#8e6677"/>
+                    </linearGradient>
+                    <linearGradient id="cl2" gradientUnits="objectBoundingBox" x1="0" y1="0" x2="0" y2="1">
+                        <stop stop-color="#8e6677"/>
+                        <stop offset="100%" stop-color="#9b5e67"/>
+                    </linearGradient>
+                    <linearGradient id="cl3" gradientUnits="objectBoundingBox" x1="1" y1="0" x2="0" y2="1">
+                        <stop stop-color="#9b5e67"/>
+                        <stop offset="100%" stop-color="#9c787a"/>
+                    </linearGradient>
+                    <linearGradient id="cl4" gradientUnits="objectBoundingBox" x1="1" y1="1" x2="0" y2="0">
+                        <stop stop-color="#9c787a"/>
+                        <stop offset="100%" stop-color="#817a94"/>
+                    </linearGradient>
+                    <linearGradient id="cl5" gradientUnits="objectBoundingBox" x1="0" y1="1" x2="0" y2="0">
+                        <stop stop-color="#817a94"/>
+                        <stop offset="100%" stop-color="#498a98"/>
+                    </linearGradient>
+                    <linearGradient id="cl6" gradientUnits="objectBoundingBox" x1="0" y1="1" x2="1" y2="0">
+                        <stop stop-color="#498a98"/>
+                        <stop offset="100%" stop-color="#618099"/>
+                    </linearGradient>
+                    </defs>
+                </svg>
             </div>
         </section>
         <nav class="nav__wrapper" id="navbar-example">
